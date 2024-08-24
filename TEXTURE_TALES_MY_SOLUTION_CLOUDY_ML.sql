@@ -4,11 +4,6 @@ select * from product_prices
 select * from product_hierarchy
 
 
-select s.txn_id, s.prod_id,s.price,pd.price,s.discount ,s.qty
-from sales s 
-inner join product_details pd  
-on s.prod_id=pd.product_id
-order by s.txn_id
 
 --1.	What was the total quantity sold for all products?
 
@@ -32,7 +27,9 @@ group by s.prod_id,pd.product_name
 order by revenue desc
 
 --3.	What was the total discount amount for all products?
-
+SELECT 
+	SUM(price * qty * discount)/100 AS total_discount
+FROM sales;
 
 --4.	How many unique transactions were there?
 
@@ -49,7 +46,7 @@ order by txn_id
 )
 select round(avg(uc)) from cte 
 
---doubt 6.	What is the average discount value per transaction?
+-- 6.	What is the average discount value per transaction?
 
 with cte as 
 (
