@@ -1,4 +1,5 @@
 # Texture Tales Clothing Company Sales Analysis
+![Screenshot 2024-08-25 012556](https://github.com/user-attachments/assets/dc0798f3-1340-46fd-8189-2d443e7f6996)
 
 ## Overview
 
